@@ -1,0 +1,35 @@
+1. Download the helm3 version:
+  curl -O https://get.helm.sh/helm-v3.1.2-linux-amd64.tar.gz
+
+2. Untar the tar file:
+     tar -xvf helm-v3.1.2-linux-amd64.tar.gz
+
+3. Create a symlink of the helm file inside /usr/local/bin
+    ln -s helm /usr/local/bin/helm3
+
+
+Migration of helm2 to helm3:
+
+1. Add plugin helm-2to3
+    helm3 plugin install https://github.com/helm/helm-2to3
+
+2. Move the helm2 configuration to helm3
+    helm3 2to3 move config
+
+3. Move the helm2 chart rleases to helm3
+    helm3 2to3 convert release/chart-name
+
+4. Search a chartname in helm3
+    helm3 search repo chartname
+
+5. Install a chart in helm3
+     helm3 install name reponame/chartname
+
+6. Uninstall a chart in helm3
+    helm3 uninstall name
+
+7. Cleanup helm2
+    helm2 2to3 cleanup
+     
+8.
+9.
